@@ -15,6 +15,7 @@ provider:
     name: aws
     runtime: nodejs10.x
     timeout: 30
+    region: ${opt:region, 'ap-south-1'}
     custom:
     defaultStage: dev
     profiles:

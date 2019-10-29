@@ -2,7 +2,7 @@
 
 const AWS = require("aws-sdk");
 
-const generateUStudentid = Math.random() * 1000;
+const generateUStudentid = (Math.round(Math.random() * 1000));
 
 //initialse dynamoDB
 const documentCLient = new AWS.DynamoDB.DocumentClient();
