@@ -38,7 +38,7 @@ functions:
     handler: getStudents.handler
     events:
       - http:
-          path: students
+          path: /students
           method: get
           cors: true
         
@@ -47,6 +47,6 @@ functions:
     handler: addStudents.handler
     events:
       - http:
-          path: students
+          path: /students
           method: post
           cors: true
