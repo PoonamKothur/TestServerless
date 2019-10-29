@@ -41,14 +41,12 @@ functions:
           path: students
           method: get
           cors: true
-          private: true
+        
 
   create:
-    handler: addStudent.handler
+    handler: addStudents.handler
     events:
       - http:
           path: students
           method: post
           cors: true
-          private: true
-    
