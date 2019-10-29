@@ -34,8 +34,8 @@ environment:
         - dynamodb:DeleteItem
     
 functions:
-  getStudents:
-    handler: getStudents.handler
+  get:
+    handler: students/getStudents
     events:
       - http:
           path: students
@@ -47,7 +47,7 @@ functions:
     handler: students/addStudent.insertStudent
     events:
       - http:
-          path: todos
+          path: students
           method: post
           cors: true
           private: true
