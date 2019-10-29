@@ -15,8 +15,7 @@ exports.handler = async event => {
         return response;
         }
     } catch (e) {
-        console.log(e);x
-       
+        console.log(e);
     }
     
     return {
