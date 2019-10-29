@@ -35,7 +35,7 @@ environment:
     
 functions:
   get:
-    handler: students/getStudents
+    handler: getStudents.handler
     events:
       - http:
           path: students
@@ -44,7 +44,7 @@ functions:
           private: true
 
   create:
-    handler: students/addStudent.insertStudent
+    handler: addStudent.handler
     events:
       - http:
           path: students
