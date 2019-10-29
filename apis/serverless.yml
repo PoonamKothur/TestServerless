@@ -51,11 +51,4 @@ functions:
           method: post
           cors: true
           private: true
-
-
-resources:
-  Resources:
-    StudentsDynamoDbTable:
-      Type: 'AWS::DynamoDB::Table'
-      DeletionPolicy: Retain
     
