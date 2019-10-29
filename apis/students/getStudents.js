@@ -1,7 +1,7 @@
 const AWS = require("aws-sdk");
 const documentClient = new AWS.DynamoDB.DocumentClient();
 
-module.exports.list = async event => {
+module.exports.handler = async event => {
     const params = {
         TableName: "Students"
     };

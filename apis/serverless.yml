@@ -35,16 +35,16 @@ environment:
     
 functions:
   get:
-    handler: getStudents.list
+    handler: students/getStudents.handler
     events:
       - http:
-          path: /apis/students
+          path: /students
           method: get
           cors: true
         
 
   create:
-    handler: addStudents.handler
+    handler: students/addStudents.handler
     events:
       - http:
           path: /students
