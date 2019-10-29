@@ -12,8 +12,8 @@ const insertStudent = async (body) => {
     const params = {
         TableName: "Students",
         Item: {
-            StudentId: generateUStudentid,
-            FirstName: body.firstName
+            Id: generateUStudentid,
+            firstName: body.firstName
         }
     };
 
