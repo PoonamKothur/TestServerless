@@ -1,6 +1,6 @@
 service: serverless-studentapi-dynamodb
 
-stage: -dev
+stage: ${opt:stage}
 
 custom:
     dynamodb:
@@ -15,6 +15,12 @@ provider:
     name: aws
     runtime: nodejs10.x
     timeout: 30
+    profile: ${self:custom.profiles.${self:provider.stage}}
+    custom:
+    defaultStage: dev
+    profiles:
+      dev: devProfile
+  
 
 environment: 
     DYNAMODB_TABLE: Students
