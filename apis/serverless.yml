@@ -29,9 +29,9 @@ environment:
         - dynamodb:DeleteItem
     
 functions:
-  get:
-    handler: students/getStudents
-   events:
+  getStudents:
+    handler: getStudents.handler
+    events:
       - http:
           path: students
           method: get
