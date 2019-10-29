@@ -38,7 +38,7 @@ functions:
     handler: getStudents.list
     events:
       - http:
-          path: /students
+          path: /apis/students
           method: get
           cors: true
         
