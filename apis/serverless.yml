@@ -55,9 +55,7 @@ functions:
 
 resources:
   Resources:
-    SstudentsDynamoDbTable:
+    StudentsDynamoDbTable:
       Type: 'AWS::DynamoDB::Table'
       DeletionPolicy: Retain
-   
-      TableName: Students
     
