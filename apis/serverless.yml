@@ -1,0 +1,58 @@
+service: serverless-studentapi-dynamodb
+
+stage: -dev
+
+custom:
+    dynamodb:
+        start:
+            port: 8000
+            inMemory: true
+            migrate: true
+            migration: 
+                dir: offline/migrations
+
+provider:
+    name: aws
+    runtime: nodejs10.x
+    timeout: 30
+
+environment: 
+    DYNAMODB_TABLE: Students
+    iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+        - dynamodb:UpdateItem
+        - dynamodb:DeleteItem
+    
+functions:
+  get:
+    handler: students/getStudents
+   events:
+      - http:
+          path: students
+          method: get
+          cors: true
+          private: true
+
+  create:
+    handler: students/addStudent.insertStudent
+    events:
+      - http:
+          path: todos
+          method: post
+          cors: true
+          private: true
+
+
+resources:
+  Resources:
+    SstudentsDynamoDbTable:
+      Type: 'AWS::DynamoDB::Table'
+      DeletionPolicy: Retain
+   
+      TableName: Students
+    
