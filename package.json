@@ -2,7 +2,7 @@
   "name": "serverless-app",
   "version": "1.0.0",
   "description": "connectivity between AWS and dynamoDB",
-  "main": "index.js",
+  "main": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
