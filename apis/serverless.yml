@@ -23,7 +23,7 @@ provider:
   
 
 environment: 
-    DYNAMODB_TABLE: Students
+    
     iamRoleStatements:
     - Effect: Allow
       Action:
@@ -33,6 +33,8 @@ environment:
         - dynamodb:PutItem
         - dynamodb:UpdateItem
         - dynamodb:DeleteItem
+
+  DYNAMODB_TABLE: Students
     
 functions:
   get:
