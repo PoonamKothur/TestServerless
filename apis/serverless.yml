@@ -23,7 +23,7 @@ provider:
   
 
 environment: 
-    
+    DYNAMODB_TABLE: Students
     iamRoleStatements:
     - Effect: Allow
       Action:
@@ -38,8 +38,8 @@ environment:
         - dynamodb:Delete*
         - dynamodb:Update*
         - dynamodb:PutItem
-
-    Resource: Students
+     Resource: "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/${self:provider.environment.DYNAMODB_TABLE}"
+   
 
   
     
