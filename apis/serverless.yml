@@ -27,14 +27,21 @@ environment:
     iamRoleStatements:
     - Effect: Allow
       Action:
+        - dynamodb:BatchGet*
+        - dynamodb:DescribeStream
+        - dynamodb:DescribeTable
+        - dynamodb:Get*
         - dynamodb:Query
         - dynamodb:Scan
-        - dynamodb:GetItem
+        - dynamodb:BatchWrite*
+        - dynamodb:CreateTable
+        - dynamodb:Delete*
+        - dynamodb:Update*
         - dynamodb:PutItem
-        - dynamodb:UpdateItem
-        - dynamodb:DeleteItem
 
-  DYNAMODB_TABLE: Students
+    Resource: Students
+
+  
     
 functions:
   get:
